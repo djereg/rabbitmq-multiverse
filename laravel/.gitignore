@@ -1,0 +1,7 @@
+/vendor
+/.idea
+/docker-dev
+Homestead.json
+Homestead.yaml
+.phpunit.result.cache
+docker-compose.yaml

@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  laravel:
+    build:
+      context: ./laravel
+      dockerfile: Dockerfile
+    hostname: laravel
+    restart: unless-stopped
+    volumes:
+      - ./laravel:/var/www/html
+      - ../laravel-rabbitmq:/var/laravel-rabbitmq
+    working_dir: /var/www/html
+    command: php artisan rabbitmq:consume --quiet
+
+  symfony:
+    build:
+      context: ./symfony
+      dockerfile: Dockerfile
+    hostname: symfony
+    restart: unless-stopped
+    volumes:
+      - ./symfony:/var/www/html
+      - ../symfony-rabbitmq:/var/symfony-rabbitmq
+    working_dir: /var/www/html
+    command: php bin/console rabbitmq:consume --quiet
+
+  nestjs:
+    image: node:21.7
+    hostname: nestjs
+    restart: unless-stopped
+    volumes:
+      - ./nestjs:/usr/src/app
+      - ../nestjs-rabbitmq:/usr/nestjs-rabbitmq
+    working_dir: /usr/src/app
+    command: npm run start
+
+  master:
+    image: node:21.7
+    hostname: master
+    restart: unless-stopped
+    volumes:
+      - ./master:/usr/src/app
+      - ../nestjs-rabbitmq:/usr/nestjs-rabbitmq
+    working_dir: /usr/src/app
+    command: npm run start
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    restart: unless-stopped
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    ports:
+      - '36297:15672'
+      - '38142:5672'
