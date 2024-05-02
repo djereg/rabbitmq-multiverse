@@ -7,7 +7,7 @@
     "php" : ">=8.2",
     "ext-ctype" : "*",
     "ext-iconv" : "*",
-    "djereg/symfony-rabbitmq" : "^0.1.0",
+    "djereg/symfony-rabbitmq" : "^0.1.2",
     "symfony/console" : "7.0.*",
     "symfony/dotenv" : "7.0.*",
     "symfony/flex" : "^2",

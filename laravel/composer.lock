@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "701cb0edd5df8bb98c6ffe39cb9218c7",
+    "content-hash": "7b016b2b447aea55fcf439878721443f",
     "packages": [
         {
             "name": "brick/math",
@@ -266,16 +266,16 @@
         },
         {
             "name": "djereg/laravel-rabbitmq",
-            "version": "v0.1.0",
+            "version": "v0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/djereg/laravel-rabbitmq.git",
-                "reference": "f3c933a460628e33b1417ea1c07d06605ba615da"
+                "reference": "db6049500abc0ac495a2067eed92347ea27fe4c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/djereg/laravel-rabbitmq/zipball/f3c933a460628e33b1417ea1c07d06605ba615da",
-                "reference": "f3c933a460628e33b1417ea1c07d06605ba615da",
+                "url": "https://api.github.com/repos/djereg/laravel-rabbitmq/zipball/db6049500abc0ac495a2067eed92347ea27fe4c2",
+                "reference": "db6049500abc0ac495a2067eed92347ea27fe4c2",
                 "shasum": ""
             },
             "require": {
@@ -323,9 +323,9 @@
             "description": "Laravel RabbitMQ",
             "support": {
                 "issues": "https://github.com/djereg/laravel-rabbitmq/issues",
-                "source": "https://github.com/djereg/laravel-rabbitmq/tree/v0.1.0"
+                "source": "https://github.com/djereg/laravel-rabbitmq/tree/v0.2.0"
             },
-            "time": "2024-05-02T11:59:26+00:00"
+            "time": "2024-05-02T22:38:03+00:00"
         },
         {
             "name": "doctrine/inflector",
